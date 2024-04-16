@@ -16,4 +16,8 @@ class Article extends Model
         'user_id',
         'category_id',
     ];
+
+    public function user() {
+        return $this->belongTo(User::class);
+    }
 }
