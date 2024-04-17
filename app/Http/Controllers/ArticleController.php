@@ -18,7 +18,14 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('article.index', compact('articles'));
+    }
+
+    public function byCategory(Category $category)
+    {
+        $articles = $category->articles()->orderby('created_at', 'desc')->get();
+        return view('article.by-category', compact('category' , 'articles'));
     }
 
     /**
@@ -40,7 +47,7 @@ class ArticleController extends Controller
             'body' => 'required|min:10',
             'image' => 'image|required',
             'category' => 'required',
-            
+
         ]);
 
         $article = Article::create([
@@ -50,7 +57,7 @@ class ArticleController extends Controller
             'image' => $request->file('image')->store('public/images'),
             'category_id' =>$request->category,
             'user_id'=> Auth::user()->id,
-            
+
         ]);
             return redirect (route('homepage'))->whit('message', 'Articolo creato con succeso');
 
@@ -61,7 +68,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('article.show', compact('article'));
     }
 
     /**

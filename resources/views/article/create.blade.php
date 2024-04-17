@@ -1,5 +1,5 @@
 <x-layout>
-<div class="container-fluid p-5 bg-info text-center text-white">
+<div class="container-fluid p-5 bg-info text-center text-black">
         <div class="row justify-content-center">
         <h1 class="dispaly-1">Inserisci un articolo</h1>
         </div>
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="mt-2 d-flex justify-content-center">
-                        <button class="btn btn-info text-white">Inserisci un articolo</button>
+                        <button class="btn btn-info text-black">Inserisci un articolo</button>
                     </div>
                     </div>
                 </form>

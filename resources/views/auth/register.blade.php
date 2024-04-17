@@ -1,5 +1,5 @@
 <x-layout>
-<div class="container-fluid p-5 bg-info text-center text-white">
+<div class="container-fluid p-5 bg-info text-center text-black">
         <div class="row justify-content-center">
         <h1 class="dispaly-1">Registrati</h1>
         </div>
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <button class="btn bg-info text-white">Registrati</button>
+                        <button class="btn bg-info text-black border">Registrati</button>
                         <p class="small mt-2">Gia' registrato?<a href="{{route ('login')}}">Clicca qui!</a></p>
                     </div>
 

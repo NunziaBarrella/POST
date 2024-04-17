@@ -1,8 +1,10 @@
 <x-layout>
 
-    <div class="container-fluid p-5 bg-info text-center text-black">
+    <div class="container-fluid p-5 bg-info text-center text-white">
         <div class="row justify-content-center">
-        <h1 class="dispaly-1">The Aulab Post</h1>
+        <h1 class="dispaly-1">
+            Categoria: {{$category->name}}
+        </h1>
         </div>
     </div>
 @if(session('message'))
