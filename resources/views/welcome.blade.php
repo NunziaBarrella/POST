@@ -5,5 +5,9 @@
         <h1 class="dispaly-1">The Aulab Post</h1>
         </div>
     </div>
-
+@if(session('message'))
+    <div class="alert alert-success text-center">
+        {{session('message')}}
+    </div>
+@endif
 </x-layout>
