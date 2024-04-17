@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="mt-2 d-flex justify-content-center">
-                        <button class="btn btn-info text-black">Inserisci un articolo</button>
+                        <button class="btn bg-info border text-black">Inserisci un articolo</button>
                     </div>
                     </div>
                 </form>

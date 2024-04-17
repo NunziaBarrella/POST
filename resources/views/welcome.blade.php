@@ -2,7 +2,7 @@
 
     <div class="container-fluid p-5 bg-info text-center text-black">
         <div class="row justify-content-center">
-        <h1 class="dispaly-1">The Aulab Post</h1>
+        <h1 class="dispaly-1 fw-bold">The Aulab Post</h1>
         </div>
     </div>
 @if(session('message'))
