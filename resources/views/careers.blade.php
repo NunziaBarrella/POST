@@ -26,7 +26,7 @@
                 @endif
 
 
-                <form action="" method="" class="p-5">
+                <form action="{{route('careers.submit')}}" method="post" class="p-5">
                     @csrf
                     <div class="mb-3">
                         <label for="role" class="form-label">Per quale ruolo ti vuoi candidare?</label>
