@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container-fluid p-5 bg-info text-center text-white">
+    <div class="container-fluid p-5 bg-info text-center text-black">
         <div class="row justify-content-center">
         <h1 class="dispaly-1">Titolo: {{$article->title}}</h1>
         </div>
@@ -19,7 +19,7 @@
             <hr>
             <p>{{$article->body}}</p>
             <div class="text-center">
-                <a href="{{route ('article.index')}}" class="btn btn-info text-white my-5">Torna indietro</a>
+                <a href="{{route ('article.index')}}" class="btn bg-info text-black my-5">Torna indietro</a>
             </div>
         </div>
         </div>

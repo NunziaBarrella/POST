@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
@@ -22,10 +24,9 @@ class ArticleController extends Controller
         return view('article.index', compact('articles'));
     }
 
-    public function byCategory(Category $category)
-    {
-        $articles = $category->articles()->orderby('created_at', 'desc')->get();
-        return view('article.by-category', compact('category' , 'articles'));
+    public function byCategory (Category $category){
+        $articles=$category->articles()->where('is_accepted', true)->orderBy('created_at','desc')->get();
+        return view('article.by-category', compact('category','articles'));
     }
 
     /**
@@ -59,7 +60,7 @@ class ArticleController extends Controller
             'user_id'=> Auth::user()->id,
 
         ]);
-            return redirect (route('homepage'))->whit('message', 'Articolo creato con succeso');
+            return redirect (route('homepage'))->with('message', 'Articolo creato con succeso');
 
     }
 
