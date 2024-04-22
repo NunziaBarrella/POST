@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
   <a class="navbar-brand" href="{{route('homepage')}}">
-      <img src="logo-aulab-hackademy-black (1).png" alt="Logo" height="30">
+      <img src="./logo-aulab-hackademy-black.png" alt="Logo" height="30">
     </a>
     <a class="navbar-brand fw-bold" href="{{route ('homepage')}}">The Aulab Post</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
