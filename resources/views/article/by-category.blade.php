@@ -11,7 +11,7 @@
         {{session('message')}}
         @endif
     </div>
-
+    
     <div class="container my-5">
         <div class="row justify-content-center">
             @foreach ($articles as $article)
