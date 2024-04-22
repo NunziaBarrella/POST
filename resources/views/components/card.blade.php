@@ -8,7 +8,7 @@
     </div>
     <div class="card-footer text-muted d-flex justify-content-center align-items-center">
         Scritto il {{$data}} da {{$user}}
-        <a href="{{$url}}" class="btn btn-info text-white">Leggi l'articolo</a>
+        <a href="{{$url}}" class="btn bg-info text-black">Leggi l'articolo</a>
 
     </div>
 </div>
