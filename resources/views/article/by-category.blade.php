@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid p5 bg-info text-center text-black bold">
         <div class="row justify-content-center">
-            <div class="dispaly-1 fw-bold">
+            <div class="h1 container-fluid p-5 bg-info text-center text-black fw-bold">
                 Categoria {{$category->name}}
             </div>
         </div>

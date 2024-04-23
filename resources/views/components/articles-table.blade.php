@@ -19,6 +19,15 @@
 
             @if (is_null($article->is_accepted))
             <a href="{{route('article.show' , compact('article'))}}" class="btn bg-info text-black">Leggi l'articolo</a>
+            <div class="d-flex justify-content-between">
+                <form action="{{route('revisor.acceptArticle' , compact ('article'))}}" method="POST">
+                @csrf
+            <button class="btn bg-info text-black">Accetta articolo</button>
+            </form>
+            <form action="{{route('revisor.rejectArticle' , compact ('article'))}}" method="POST">
+                @csrf
+            <button class="btn bg-info text-black">Rifiuta articolo</button>
+            </form>
             @else
             <form action="{{route('revisor.undoArticle' , compact ('article'))}}" method="POST">
                 @csrf

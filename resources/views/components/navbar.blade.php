@@ -45,7 +45,11 @@
           </ul>
         </li>
        @endauth
-        @guest
+ 
+    </ul>
+    <div class="d-flex">
+      <ul class="navbar nav">
+      @guest
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Benvenuto ospite
@@ -57,10 +61,15 @@
           </ul>
         </li>
         @endguest
-    </ul>
-    <form class="d-flex" method="GET" action="{{route ('article.search')}}" >
+      </ul>
+      <div class="d-flex align-items-center">
+      <form class="d-flex" method="GET" action="{{route ('article.search')}}" >
         <input class="form-control me-2" type="search" placeholder="Cosa stai cercando?" aria-label="Search" name="query">
         <button class="btn btn-outline-success" type="submit">Cerca</button>
       </form>
+      </div>
+ 
+    </div>
+ 
   </div>
 </nav>
