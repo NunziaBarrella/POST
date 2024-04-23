@@ -45,20 +45,20 @@
           </ul>
         </li>
        @endauth
- 
+
     </ul>
     <div class="d-flex">
       <ul class="navbar nav">
       @guest
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Benvenuto ospite
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{route ('register')}}">Registrati</a></li>
-            <li><a class="dropdown-item" href="{{route ('login')}}">Accedi</a></li>
 
-          </ul>
+          <li class="nav-item">
+          <a class="nav-link fw-bold text-black" href="{{route ('login')}}">Accedi</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link fw-bold text-black" href="{{route ('register')}}">Registrati</a>
+        </li>
+
+
         </li>
         @endguest
       </ul>
@@ -68,8 +68,8 @@
         <button class="btn btn-outline-success" type="submit">Cerca</button>
       </form>
       </div>
- 
+
     </div>
- 
+
   </div>
 </nav>
