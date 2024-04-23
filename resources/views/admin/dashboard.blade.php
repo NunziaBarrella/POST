@@ -60,6 +60,11 @@
                 <div class="col-12">
                     <h2>Le categorie della piattaorma</h2>
                     <x-metainfo-table :metaInfos="$categories" metaType="categories"/>
+                    <form action="{{route('admin.storeCategory')}}" class="d-flex" methos="POST">
+                        @csrf
+                        <input type="text" name="name" class="form-control me-2" placeholder="Inserisci una nuova categoria">
+                        <button type="submit" class="btn btn-success text-black">Aggiungi</button>
+                    </form>
                 </div>
             </div>
     

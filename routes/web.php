@@ -34,7 +34,9 @@ Route::middleware('admin')->group(function(){
     Route::patch('/admin/{user}/set-writer' , [AdminController::class, 'setWriter'])->name('admin.setWriter');
     Route::put('admin/edit/{tag}/tag', [AdminController::class, 'editTag'])->name('admin.editTag');
     Route::delete('admin/delete/{tag}/tag', [AdminController::class, 'deleteTag'])->name('admin.deleteTag');
-
+    Route::put('admin/edit/{category}/category', [AdminController::class, 'editcategory'])->name('admin.editcategory');
+    Route::delete('admin/edit/{category}/category', [AdminController::class, 'deletecategory'])->name('admin.deletecategory');
+    Route::post('/admin/category/store' , [AdminController::class, 'storeCategory'])->name('admin.storeCategory');
 });
 
 Route::middleware('revisor')->group(function(){

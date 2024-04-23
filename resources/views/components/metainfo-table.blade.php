@@ -33,6 +33,20 @@
             </td>
             @else
             <td>
+            <form action="{{route('admin.editcategory' , ['category' => $metaInfo])}}" method="POST">
+                @csrf
+                @method('put')
+                <input type="text" name="name" placeholder="Nuovo nome tag" class="form-control w-50 d-inline">
+                <button type="submit" class="btn bg-info text-black">Aggiorna</button>
+            </form>
+            </td>
+            <form action="{{route('admin.deletecategory' , ['category' => $metaInfo])}}" method="POST">
+                @csrf
+                @method('put')
+                <input type="text" name="name" placeholder="Nuovo nome tag" class="form-control w-50 d-inline">
+                <button type="submit" class="btn bg-info text-black">Aggiorna</button>
+            </form>
+            </td>
          
 
             @endif
