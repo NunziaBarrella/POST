@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'show');
+        $this->middleware('auth')->except('index', 'show', 'byCategory');
     }
     /**
      * Display a listing of the resource.
@@ -55,6 +56,7 @@ class ArticleController extends Controller
             'body' => 'required|min:10',
             'image' => 'image|required',
             'category' => 'required',
+            'tags'=> 'required',
 
         ]);
 
@@ -67,6 +69,23 @@ class ArticleController extends Controller
             'user_id'=> Auth::user()->id,
 
         ]);
+
+        $tags = explode(',' , $request->tags);
+
+        foreach ($tags as $i => $tag) {
+            $tags[$i] = trim($tag);
+        }
+
+        foreach ($tags as $tag) {
+            $newTag = Tag::updateOrCreate(
+                ['name' => $tag],
+                ['name' => strtolower($tag)],
+
+            );
+
+            $article->tags()->attach($newTag);
+
+        }
             return redirect (route('homepage'))->with('message', 'Articolo creato con succeso');
 
     }
