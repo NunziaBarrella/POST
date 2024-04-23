@@ -14,7 +14,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'show', 'byCategory');
+        $this->middleware('auth')->except('index', 'show', 'byCategory', 'articleSearch');
     }
     /**
      * Display a listing of the resource.

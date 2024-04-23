@@ -10,6 +10,16 @@
     <div class="alert alert-succes text-center">
         {{session ('message')}}
         @endif
+    @if($errors->any())
+    <div class="alert alert-danger text-center">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+
+ @endif
 
         <div class="container my-5">
             <div class="row justify-content-center">
@@ -35,6 +45,24 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2>Tags della piattaorma</h2>
+                    <x-metainfo-table :metaInfos="$tags" metaType="tags"/>
+                </div>
+            </div>
+    
+    </div>
+    <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2>Le categorie della piattaorma</h2>
+                    <x-metainfo-table :metaInfos="$categories" metaType="categories"/>
+                </div>
+            </div>
+    
     </div>
 
 </x-layout>
