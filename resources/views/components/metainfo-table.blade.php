@@ -1,13 +1,12 @@
 <table class="table table-striped table-hover border">
     <thead class="table-dark">
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">n</th>
             <th scope="col">Nome tag</th>
             <th scope="col">Q.tà articoli collegati</th>
             <th scope="col">Aggiorna</th>
             <th scope="col">Cancella</th>
         </tr>
-
     </thead>
     <tbody>
         @foreach ($metaInfos as $metaInfo)
@@ -21,14 +20,14 @@
                 @csrf
                 @method('put')
                 <input type="text" name="name" placeholder="Nuovo nome tag" class="form-control w-50 d-inline">
-                <button type="submit" class="btn bg-info text-black">Aggiorna</button>
+                <button type="submit" class="btn text-black fa-regular fa-circle-check"></button>
             </form>
             </td>
             <td>
             <form action="{{route('admin.deleteTag' , ['tag' => $metaInfo])}}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn bg-danger text-black">Rimuovi tag</button>
+                <button type="submit" class="btn text-black"><i class="fa-regular fa-trash-can"></i></button>
             </form>
             </td>
             @else
@@ -37,14 +36,14 @@
                 @csrf
                 @method('put')
                 <input type="text" name="name" placeholder="Nuova categoria" class="form-control w-50 d-inline">
-                <button type="submit" class="btn bg-info text-black">Aggiorna</button>
+                <button type="submit" class="btn text-black"><i class="fa-regular fa-circle-check"></i></button>
             </form>
             </td>
             <td>
             <form action="{{route('admin.deleteCategory', ['category' =>$metaInfo])}}" method="POST">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn bg-danger text-black">Cancella</button>
+                    <button type="submit" class="btn text-black fa-regular fa-trash-can"></button>
                 </form>
             </td>
 
