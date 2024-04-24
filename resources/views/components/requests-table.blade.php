@@ -15,31 +15,31 @@
             <td>{{$user->email}}</td>
             <td>
                 @switch($role)
-                @case('amministratore')
+                @case('Admin')
                 <form action="{{route ('admin.setAdmin', compact('user')) }}" method="POST">
                     @csrf
                     @method('patch')
 
-                <button type="submit" class="btn btn-info test-black">Attiva {{$role}}</button>
+                <button type="submit" class="btn bg-info test-black">Attiva {{$role}}</button>
 
                 </form>
                 @break
 
-                @case('revisore')
+                @case('Revisore')
                 <form action="{{route ('admin.setRevisor', compact('user')) }}" method="POST">
                     @csrf
                     @method('patch')
 
-                <button type="submit" class="btn btn-info test-black">Attiva {{$role}}</button>
+                <button type="submit" class="btn bg-info test-black">Attiva {{$role}}</button>
 
                 </form>
                 @break
-                @case('redattore')
+                @case('writer')
                 <form action="{{route ('admin.setWriter', compact('user')) }}" method="POST">
                     @csrf
                     @method('patch')
 
-                <button type="submit" class="btn btn-info test-black">Attiva {{$role}}</button>
+                <button type="submit" class="btn bg-info test-black">Attiva {{$role}}</button>
 
                 </form>
                 @break

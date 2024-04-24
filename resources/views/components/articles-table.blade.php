@@ -18,22 +18,23 @@
             <td>
 
             @if (is_null($article->is_accepted))
-            <a href="{{route('article.show' , compact('article'))}}" class="btn bg-info text-black">Leggi l'articolo</a>
             <div class="d-flex justify-content-between">
+            <a href="{{route('article.show' , compact('article'))}}" class="btn bg-info text-black"><i class="fa-solid fa-book-open"></i></a>
                 <form action="{{route('revisor.acceptArticle' , compact ('article'))}}" method="POST">
                 @csrf
-            <button class="btn bg-info text-black">Accetta articolo</button>
-            </form>
-            <form action="{{route('revisor.rejectArticle' , compact ('article'))}}" method="POST">
-                @csrf
-            <button class="btn bg-info text-black">Rifiuta articolo</button>
-            </form>
-            @else
-            <form action="{{route('revisor.undoArticle' , compact ('article'))}}" method="POST">
-                @csrf
-            <button class="btn bg-info text-black border p-2 center">Riporta in revisione</button>
+                        <button class="btn bg-info text-black"><i class="fa-solid fa-circle-check"></i></button>
+                        </form>
+                        <form action="{{route('revisor.rejectArticle' , compact ('article'))}}" method="POST">
+                            @csrf
+                        <button class="btn bg-info text-black"><i class="fa-solid fa-trash"></i></button>
+                        </form>
+                        @else
+                        <form action="{{route('revisor.undoArticle' , compact ('article'))}}" method="POST">
+                            @csrf
+                        <button class="btn bg-info text-black border p-2 center">Riporta in revisione</button>
 
-            </form>
+                        </form>
+            </div>
             @endif
             </td>
         </tr>
