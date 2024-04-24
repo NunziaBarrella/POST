@@ -35,7 +35,7 @@ Route::middleware('admin')->group(function(){
     Route::put('admin/edit/{tag}/tag', [AdminController::class, 'editTag'])->name('admin.editTag');
     Route::delete('admin/delete/{tag}/tag', [AdminController::class, 'deleteTag'])->name('admin.deleteTag');
     Route::put('admin/edit/{category}/category', [AdminController::class, 'editcategory'])->name('admin.editcategory');
-    Route::delete('admin/edit/{category}/category', [AdminController::class, 'deletecategory'])->name('admin.deletecategory');
+    Route::delete('admin/edit/{category}/category', [AdminController::class, 'deletecategory'])->name('admin.deleteCategory');
     Route::post('/admin/category/store' , [AdminController::class, 'storeCategory'])->name('admin.storeCategory');
 });
 

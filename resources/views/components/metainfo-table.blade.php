@@ -36,21 +36,21 @@
             <form action="{{route('admin.editcategory' , ['category' => $metaInfo])}}" method="POST">
                 @csrf
                 @method('put')
-                <input type="text" name="name" placeholder="Nuovo nome tag" class="form-control w-50 d-inline">
+                <input type="text" name="name" placeholder="Nuova categoria" class="form-control w-50 d-inline">
                 <button type="submit" class="btn bg-info text-black">Aggiorna</button>
             </form>
             </td>
-            <form action="{{route('admin.deletecategory' , ['category' => $metaInfo])}}" method="POST">
-                @csrf
-                @method('put')
-                <input type="text" name="name" placeholder="Nuovo nome tag" class="form-control w-50 d-inline">
-                <button type="submit" class="btn bg-info text-black">Aggiorna</button>
-            </form>
+            <td>
+            <form action="{{route('admin.deleteCategory', ['category' =>$metaInfo])}}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn bg-danger text-black">Cancella</button>
+                </form>
             </td>
-         
+
 
             @endif
-       
+
         </tr>
         @endforeach
     </tbody>

@@ -1,19 +1,23 @@
 <x-layout>
-    <div class="container fluid p5 bg-info text-center text-white">
+    <div class="container fluid p5 allArticle text-center">
         <div class="row justify-content-center">
-            <div class="display-1 bg-info fw-bold text-black d-flex">
-                Tutti gli articoli per {{$query}}
+            <div class="h1 display-1 fw-bold">
+                UTENTE: {{$user->name}}
             </div>
         </div>
+    </div>
+    @if (session('message'))
+    <div class="alert alert-success">
+        {{session('message')}}
+        @endif
     </div>
 
     <div class="container my-5">
         <div class="row justify-content-center">
             @foreach ($articles as $article)
-            <div class="col-12 col-md-5 col-lg-3 m-3">
+            <div class="col-12 col-md-3">
                 <x-card
                 :article='$article'
-
             />
             </div>
 
