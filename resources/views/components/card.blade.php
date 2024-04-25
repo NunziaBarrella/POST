@@ -1,4 +1,5 @@
-<div class="card">
+<a href="{{route ('article.show', compact('article'))}}" class="card-title">
+<div class="card align-items-center">
     <img src="{{Storage::url($article->image)}}" alt="" class="card-img-top">
     <div class="card-body">
         <h5 class="card-title">{{$article->title}}</h5>
@@ -20,6 +21,12 @@
         @endif
 
     </div>
-    <div class="my-2">Creato il: {{$article->created_at->format('d/m/Y')}} da <a href="{{route('article.byUser',['user'=>$article->user->id])}}">{{$article->user->name}}</a>
+    <div class="my-2">Scritto il {{$article->created_at->format('d/m/Y')}} da <a href="{{route('article.byUser',['user'=>$article->user->id])}}">{{$article->user->name}}</a>
+    </div>
+
+    <div class="mx-auto pt-2">
+    <a href="{{route ('article.show', compact('article'))}}" class="btn bg-info text-black border">Leggi</a>
+
     </div>
 </div>
+</a>

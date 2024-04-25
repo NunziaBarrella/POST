@@ -2,7 +2,7 @@
 
     <div class="container-fluid p-5 bg-info text-center text-black">
         <div class="row justify-content-center">
-        <h1 class="dispaly-1 fw-bold">The Aulab Post</h1>
+        <h1 class="dispaly-1 fw-bold animated fadeIn">The Aulab Post</h1>
         <h2>l'informazione é qui!</h2>
         </div>
     </div>
@@ -27,8 +27,7 @@
     </div>
 </nav>
 
-
-<!--     <div class="container my-5">
+    <div class="container my-5">
         <div class="row justify-content-center">
             @foreach ($articles as $article)
             <div class="col-12 col-md-3 col-lg-3 m-3 cards ">
@@ -40,10 +39,10 @@
             @endforeach
         </div>
     </div>
-</x-layout> -->
+</x-layout>
 
 
-<div class="container">
+<<!-- div class="container">
     <div class="row justify-content-center text-center">
         <div class="col-12 col-md-6">
             <h1 class="d-flex justify-content-center text-black fw-bold"></h4>
@@ -77,3 +76,4 @@
         </div>
     </div>
     <x/layout>
+ -->

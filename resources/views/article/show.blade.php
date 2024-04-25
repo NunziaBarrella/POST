@@ -16,8 +16,6 @@
                     <p>Scritto da {{$article->user->name}} il {{$article->created_at->format('d/m/Y')}} </p>
                 </div>
             </div>
-            <a href="{{route('article.show', compact('article'))}}" class="btn bg-info text-black">Leggi</a>
-
             <hr>
             <p>{{$article->body}}</p>
             <div class="text-center">

@@ -15,7 +15,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index', 'show', 'byCategory', 'articleSearch');
+        $this->middleware('auth')->except('index', 'show', 'byCategory', 'articleSearch', 'byUser');
     }
     /**
      * Display a listing of the resource.
@@ -104,6 +104,7 @@ class ArticleController extends Controller
     {
         return view('article.show', compact('article'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
