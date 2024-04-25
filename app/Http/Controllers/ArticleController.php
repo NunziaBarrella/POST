@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -35,6 +36,12 @@ class ArticleController extends Controller
     public function byCategory (Category $category){
         $articles=$category->articles()->where('is_accepted', true)->orderBy('created_at','desc')->get();
         return view('article.by-category', compact('category','articles'));
+    }
+
+    public function byUser (User $user){
+        $articles=$user->articles()->orderBy('created_at','desc')->get();
+        return view('article.by-user', compact('user','articles'));
+
     }
 
     /**

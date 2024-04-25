@@ -1,8 +1,8 @@
 <x-layout>
-    <div class="container fluid p5 allArticle text-center">
+    <div class="container-fluid p5 bg-info text-center">
         <div class="row justify-content-center">
-            <div class="h1 display-1 fw-bold">
-                UTENTE: {{$user->name}}
+            <div class="h1 container-fluid p-5 bg-info text-center text-black fw-bold">
+                Utente {{$user->name}}
             </div>
         </div>
     </div>
