@@ -67,10 +67,18 @@
     height: auto;
 }
 
+  /*   .imgAlt{
+        height: 300px;
+    } */
 
+
+
+    .imgAlt {
+        width: 100%; /* Imposta la larghezza al 100% della larghezza della card */
+        height: auto; /* Imposta l'altezza automaticamente per mantenere le proporzioni originali */
+    }
 
     .card {
-
     transition: 0.2s ease;
     border-radius: 30px;
     }

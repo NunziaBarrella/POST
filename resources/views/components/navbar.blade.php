@@ -9,9 +9,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-        <li class="nav-item">
-          <a class="nav-link" href="{{route ('article.create')}}">Inserisci un articolo</a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{{route ('article.index')}}">Tutti gli articoli</a>
         </li>
@@ -33,6 +31,9 @@
         </li>
         @endif
         @if (Auth::user()->is_writer)
+        <li class="nav-item">
+          <a class="nav-link" href="{{route ('article.create')}}">Inserisci un articolo</a>
+        </li>
        <li class="nav-item">
           <a class="nav-link" href="{{route ('writer.dashboard')}}">Dashboard redattore</a>
         </li>

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Tag;
 use App\Models\Category;
 use Laravel\Scout\Searchable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -48,9 +49,6 @@ class Article extends Model
         return Article::where('is_accepted', null)->count();
     }
 
-    public static function toBeAdminCount(){
-        return Article::where('is_accepted', null)->count();
-    }
 
     public function getRouteKeyName(){
         return 'slug';

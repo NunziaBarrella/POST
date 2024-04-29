@@ -1,6 +1,13 @@
 <a href="{{route ('article.show', compact('article'))}}" class="card-title">
-<div class="card align-items-center pb-3">
-    <img src="{{Storage::url($article->image)}}" alt="" class="card-img-top">
+    <div class="container">
+        <div class="row justify-content-end mb-3">
+            <div class="col-12 col-md-6">
+
+
+        </div>
+    </div>
+<div class="card align-items-center d-flex pb-3">
+    <img src="{{Storage::url($article->image)}}" alt="" class="card-img-top imgAlt">
     <div class="card-body">
         <h5 class="card-title">{{$article->title}}</h5>
         <p class="card-text">{{$article->subtitle}}</p>
@@ -42,3 +49,4 @@
     </div>
 </div>
 </a>
+</div>
