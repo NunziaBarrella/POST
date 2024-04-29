@@ -7,9 +7,11 @@
     </div>
 
     @if(session ('message'))
-    <div class="alert alert-succes text-center">
+    <div class="alert alert-success text-center">
         {{session ('message')}}
+</div>
         @endif
+
 
         <div class="container my-5">
             <div class="row justify-content-center">

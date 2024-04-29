@@ -6,9 +6,11 @@ use App\Models\Tag;
 use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -39,7 +41,7 @@ class ArticleController extends Controller
     }
 
     public function byUser (User $user){
-        $articles=$user->articles()->orderBy('created_at','desc')->get();
+        $articles=$user->articles()->where('is_accepted', true)->orderBy('created_at','desc')->get();
         return view('article.by-user', compact('user','articles'));
 
     }
@@ -74,6 +76,7 @@ class ArticleController extends Controller
             'image' => $request->file('image')->store('public/images'),
             'category_id' =>$request->category,
             'user_id'=> Auth::user()->id,
+            'slug'=>Str::slug($request->title),
 
         ]);
 
@@ -126,6 +129,7 @@ class ArticleController extends Controller
             'image' => 'image',
             'category' => 'required',
             'tags'=> 'required',
+            'slug'=>Str::slug($request->title),
 
         ]);
 
@@ -134,13 +138,14 @@ class ArticleController extends Controller
             'subtitle' =>$request ->subtitle,
             'body' =>$request->body,
             'user_id'=> Auth::user()->id,
+            'is_accepted'=> NULL
 
         ]);
 
         if ($request->image) {
             Storage::delete($article->image);
             $article->update([
-                image=>$request->file('image')->store('public/image'),
+               $article->image=>$request->file('image')->store('public/image'),
             ]);
         }
 
@@ -162,7 +167,6 @@ class ArticleController extends Controller
 
         }
         $article->tags()->sync($newTags);
-
             return redirect (route('writer.dashboard'))->with('message', 'Articolo aggiornato con succeso');
     }
 

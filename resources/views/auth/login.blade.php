@@ -19,7 +19,7 @@
                 </div>
                 @endif
 
-                <form class="card p-5 shadow" action="{{route ('login')}}" method= "POST">
+                <form class="card_login p-5 shadow" action="{{route ('login')}}" method= "POST">
                     @csrf
 
 

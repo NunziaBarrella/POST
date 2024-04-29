@@ -25,7 +25,10 @@
         </li>
         @endif
         @if (Auth::user()->is_revisor)
-       <li class="nav-item">
+       <li class="nav-item position-relative">
+       <span class="translate-middle badge roundend-circle bg-danger">
+            {{App\Models\Article::toBeRevisionedCount()}}
+          </span>
           <a class="nav-link" href="{{route ('revisor.dashboard')}}">Dashboard revisore</a>
         </li>
         @endif

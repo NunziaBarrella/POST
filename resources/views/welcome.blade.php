@@ -2,10 +2,25 @@
 
     <div class="container-fluid p-5 bg-info text-center text-black">
         <div class="row justify-content-center">
-        <h1 class="dispaly-1 fw-bold animated fadeIn">The Aulab Post</h1>
+
+        <h1 class="dispaly-1 fw-bold">The Aulab Post</h1>
         <h2>l'informazione é qui!</h2>
         </div>
     </div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <div class="container d-flex justify-content-center">
+        <ul class="navbar-nav banner-ul">
+            @foreach($categories as $category)
+                <li class="nav-item banner">
+                    <a class="nav-link px-4" href="{{ route('article.byCategory', $category->id) }}">{{ $category->name }}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+</nav>
+
 
 
 @if(session('message'))
@@ -14,18 +29,6 @@
     </div>
 @endif
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <div class="container d-flex justify-content-center">
-        <ul class="navbar-nav mr-auto">
-            @foreach($categories as $category)
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('article.byCategory', $category->id) }}">{{ $category->name }}</a>
-                </li>
-            @endforeach
-        </ul>
-    </div>
-</nav>
 
     <div class="container my-5">
         <div class="row justify-content-center">
@@ -39,6 +42,14 @@
             @endforeach
         </div>
     </div>
+
+    </div>
+
+
+
+
+
+
 </x-layout>
 
 

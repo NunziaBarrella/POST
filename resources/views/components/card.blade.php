@@ -1,5 +1,5 @@
 <a href="{{route ('article.show', compact('article'))}}" class="card-title">
-<div class="card align-items-center">
+<div class="card align-items-center pb-3">
     <img src="{{Storage::url($article->image)}}" alt="" class="card-img-top">
     <div class="card-body">
         <h5 class="card-title">{{$article->title}}</h5>
@@ -20,12 +20,22 @@
         </p>
         @endif
 
+        @if ($article->users)
+        <p class="small fst-italic text-capitalize">
+            @foreach ($article->users as $user )
+            #{{$user->name}}
+            @endforeach
+        </p>
+        @endif
+
+
+
     </div>
     <div class="my-2">Scritto il {{$article->created_at->format('d/m/Y')}} da <a href="{{route('article.byUser',['user'=>$article->user->id])}}">{{$article->user->name}}</a>
     </div>
 
     <div class="mx-auto pt-2">
-    <a href="{{route ('article.show', compact('article'))}}" class="btn bg-info text-black border">Leggi</a>
+    <a href="{{route ('article.show', compact('article'))}}" class="btn bg-info text-black border mb-10" id="btn_card">Leggi</a>
 
     </div>
 </div>

@@ -19,6 +19,7 @@ class Article extends Model
         'image',
         'user_id',
         'category_id',
+        'slug',
         'is_accepted',
     ];
 
@@ -43,4 +44,17 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public static function toBeRevisionedCount(){
+        return Article::where('is_accepted', null)->count();
+    }
+
+    public static function toBeAdminCount(){
+        return Article::where('is_accepted', null)->count();
+    }
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
+    public function read
 }

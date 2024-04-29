@@ -10,13 +10,13 @@
     <tbody>
         @foreach ($roleRequests as $user)
         <tr>
-            <th scoper ="row">{{ $user->id}}</th>
+            <th scoper ="row">{{$user->id}}</th>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>
                 @switch($role)
-                @case('Admin')
-                <form action="{{route ('admin.setAdmin', compact('user')) }}" method="POST">
+                @case('amministratore')
+                <form action="{{route('admin.setAdmin', compact('user')) }}" method="POST">
                     @csrf
                     @method('patch')
 
@@ -25,7 +25,7 @@
                 </form>
                 @break
 
-                @case('Revisore')
+                @case('revisore')
                 <form action="{{route ('admin.setRevisor', compact('user')) }}" method="POST">
                     @csrf
                     @method('patch')

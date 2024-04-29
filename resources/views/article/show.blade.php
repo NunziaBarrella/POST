@@ -19,7 +19,7 @@
             <hr>
             <p>{{$article->body}}</p>
             <div class="text-center">
-                <a href="{{route ('article.index')}}" class="btn bg-info text-black my-5">Torna indietro</a>
+                <a href="{{url()->previous()}}" class="btn bg-info text-black my-5">Torna indietro</a>
             </div>
 
             </div>
