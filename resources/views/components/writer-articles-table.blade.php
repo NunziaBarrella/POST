@@ -1,7 +1,7 @@
 <table class="table table-striped table-hover border">
     <thead class="table-dark">
         <tr>
-            <th scope=col>#</th>
+            <th scope=col>n</th>
             <th scope=col>Titolo</th>
             <th scope=col>Sottotitolo</th>
             <th scope=col>Categoria</th>
@@ -26,12 +26,12 @@
             </td>
             <td>{{$article->created_at->format('d/m/Y')}}</td>
             <td>
-                <a href="{{route('article.show',compact('article'))}}" class="btn bg-info ">Leggi</i></a>
-                <a href="{{route('article.edit', compact('article'))}}" class="btn bg-info text-black">Modifica l'articolo</a>
+                <a href="{{route('article.show',compact('article'))}}" class="btn bg-info"><i class="fa-solid fa-book-open"></i></a>
+                <a href="{{route('article.edit', compact('article'))}}" class="btn bg-info text-black"><i class="fa-solid fa-pencil"></i></a>
                 <form action="{{route('article.destroy', compact('article'))}}" method="POST" class="d-inline">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn bg-info">Elimina articolo</i></button>
+                    <button type="submit" class="btn bg-info"><i class="fa-solid fa-trash"></i></button>
                 </form>
             </td>
 

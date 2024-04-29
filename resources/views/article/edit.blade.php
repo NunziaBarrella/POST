@@ -16,7 +16,7 @@
                     </ul>
                 </div>
                 @endif
-                <form action="{{route('article.update' , compact('article'))}}" method="post" class="card p-5 shadow" enctype="multipart/form-data">
+                <form action="{{route('article.update' , compact('article'))}}" method="post" class="card_edit p-5 shadow" enctype="multipart/form-data">
                     @csrf
                     @method('put')
 

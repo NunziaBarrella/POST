@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">Password:</label>
+                        <label for="password_confirmation" class="form-label">Conferma Password:</label>
                         <input type="password" name= "password_confirmation" class="form-control" id="password_confirmation">
                     </div>
 

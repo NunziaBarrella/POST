@@ -2,7 +2,7 @@
     <thead class="table-dark">
         <tr>
             <th scope="col">n</th>
-            <th scope="col">Nome tag</th>
+            <th scope="col">Nome</th>
             <th scope="col">Q.tà articoli collegati</th>
             <th scope="col">Aggiorna</th>
             <th scope="col">Cancella</th>

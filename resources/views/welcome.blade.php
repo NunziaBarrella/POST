@@ -2,8 +2,9 @@
 
     <div class="container-fluid p-5 bg-info text-center text-black">
         <div class="row justify-content-center">
+        <img src="/img/aulab_srl_logo-removebg-preview.png"  alt="Logo" class="img-fluid logo-img">
+            <h1 class="dispaly-1 fw-bold">The Aulab Post</h1>
 
-        <h1 class="dispaly-1 fw-bold">The Aulab Post</h1>
         <h2>l'informazione é qui!</h2>
         </div>
     </div>
@@ -18,6 +19,7 @@
                 </li>
             @endforeach
         </ul>
+
     </div>
 </nav>
 
@@ -53,7 +55,7 @@
 </x-layout>
 
 
-<<!-- div class="container">
+<!-- div class="container">
     <div class="row justify-content-center text-center">
         <div class="col-12 col-md-6">
             <h1 class="d-flex justify-content-center text-black fw-bold"></h4>

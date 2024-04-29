@@ -12,6 +12,8 @@
         </p>
         @endif
 
+        <span class="small text-muted fst-italic text-capitalize">-tempo di lettura {{$article->readDuration()}} min</span>
+
         @if ($article->tags)
         <p class="small fst-italic text-capitalize">
             @foreach ($article->tags as $tag )
